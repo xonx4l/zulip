@@ -603,6 +603,18 @@ export function initialize() {
         });
     });
 
+    // Left sidebar channel rows
+    $("body").on("click", ".channel-new-topic-button", (e) => {
+        e.stopPropagation();
+        const elem = e.currentTarget;
+        const stream_id = Number.parseInt(elem.dataset.streamId, 10);
+        compose_actions.start({
+            message_type: "stream",
+            stream_id,
+            topic: "",
+        });
+    });
+
     // Recent conversations direct messages (Not displayed on small widths)
     $("body").on("mouseenter", ".recent_topic_stream .pm_status_icon", (e) => {
         e.stopPropagation();
