@@ -1010,6 +1010,8 @@ li.top_left_scheduled_messages {
 }
 
 .subscription_block {
+    /* We hold 15px of space to approximate the width of
+       a single-digit unread counter. */
     grid-template-columns:
         var(--left-sidebar-toggle-width-offset) var(
             --left-sidebar-icon-column-width
@@ -1018,7 +1020,7 @@ li.top_left_scheduled_messages {
             0,
             max-content
         )
-        minmax(0, max-content)
+        minmax(15px, max-content)
         var(--left-sidebar-vdots-width) 0;
     white-space: nowrap;
 
